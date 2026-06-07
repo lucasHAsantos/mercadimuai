@@ -56,12 +56,6 @@ export const LicensingSection = ({ onOpenModal }: Props) => (
                 <div className="flex gap-3">
                     <span className="text-[#FF6300] text-xl font-bold shrink-0">›</span>
                     <p className="text-zinc-700">
-                        Investimento inicial <strong>aproximado de R$ 30 mil</strong>, oferecendo uma oportunidade acessível para começar o negócio.
-                    </p>
-                </div>
-                <div className="flex gap-3">
-                    <span className="text-[#FF6300] text-xl font-bold shrink-0">›</span>
-                    <p className="text-zinc-700">
                         Aproximadamente <strong>8 horas de trabalho semanais</strong> com logística, facilitando a operação de cada unidade.
                     </p>
                 </div>
