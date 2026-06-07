@@ -1,32 +1,96 @@
-import { FileText, Users, Handshake, Store, Package, MonitorPlay } from 'lucide-react'
+import { Building2, ClipboardList, FileCheck, Wrench, Rocket } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-const steps = [
-    { icon: FileText, title: '1. Assinatura do Contrato', desc: 'Assinatura do contrato de licença de uso da marca + sistema.' },
-    { icon: Users, title: '2. Prospecção de Clientes', desc: 'Prospecção de condomínios + de 80 apartamentos ou empresas + de 100 colaboradores.' },
-    { icon: Handshake, title: '3. Fechamento com Cliente', desc: 'Assinatura do contrato entre o licenciado, MercadimUai e o cliente.' },
-    { icon: Store, title: '4. Implantação do Mercado', desc: 'Elaboração de projeto 100% personalizado para o espaço do cliente.' },
-    { icon: Package, title: '5. Compra e Abastecimento', desc: 'Oferta de produtos de qualidade com reposição em um prazo adequado.' },
-    { icon: MonitorPlay, title: '6. Monitoramento Constante', desc: 'Observação das vendas e melhoria contínua do mix de produtos.' },
+type Step = {
+    num: string
+    title: string
+    desc: string
+    Icon: LucideIcon
+}
+
+const steps: Step[] = [
+    { num: '01', title: 'Visita ao condomínio ou empresa', desc: 'Nossa equipe visita o local para entender o espaço e as necessidades do cliente.', Icon: Building2 },
+    { num: '02', title: 'Elaboração do projeto e envio da proposta', desc: 'Desenvolvemos um projeto 100% personalizado e enviamos a proposta comercial.', Icon: ClipboardList },
+    { num: '03', title: 'Aprovação da proposta', desc: 'Cliente aprova e assinamos o contrato entre o licenciado, MercadimUai e o cliente.', Icon: FileCheck },
+    { num: '04', title: 'Instalação da estrutura', desc: 'Montagem completa do mercado no espaço definido, sem custo para o condomínio.', Icon: Wrench },
+    { num: '05', title: 'Inauguração da loja', desc: 'Seu mercado autônomo entra em operação 24h, abastecido e pronto para vender.', Icon: Rocket },
 ]
 
 export const StepsSection = () => (
-    <section className="py-24 px-4 bg-[#0a0a0a]">
-        <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16 text-white">Principais etapas do franqueado</h2>
+    <section id="como-funciona" className="bg-[#0a0a0a] pt-20 md:pt-28 pb-10 px-4">
+        <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16 uppercase leading-tight">
+                5 passos para implantar<br />
+                <span className="text-[#FF6300]">seu ponto de venda</span>
+            </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {steps.map((step, i) => {
-                    const IconComponent = step.icon
-                    return (
-                        <div key={i} className="flex gap-4 p-6 border border-zinc-800 rounded-2xl bg-[#111] hover:bg-[#1a1a1a] hover:border-zinc-700 transition-all">
-                            <div className="shrink-0">
-                                <div className="w-14 h-14 bg-[#FF6B00] text-white rounded-xl flex items-center justify-center">
-                                    <IconComponent className="w-7 h-7" />
+                    const { Icon } = step
+                    const isLast = i === 4
+
+                    if (isLast) {
+                        return (
+                            <div
+                                key={i}
+                                className="md:col-span-2 relative bg-[#FF6300] rounded-2xl p-8 md:p-10 overflow-hidden"
+                            >
+                                {/* Decorative circles */}
+                                <div className="absolute -right-10 -bottom-10 w-56 h-56 rounded-full bg-white/5 pointer-events-none" />
+                                <div className="absolute -right-4 -bottom-4 w-36 h-36 rounded-full bg-white/5 pointer-events-none" />
+
+                                {/* Watermark */}
+                                <span className="absolute top-4 right-6 text-8xl md:text-9xl font-black text-white/10 leading-none select-none pointer-events-none">
+                                    {step.num}
+                                </span>
+
+                                <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+                                    <div className="w-16 h-16 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+                                        <Icon size={32} className="text-white" />
+                                    </div>
+
+                                    <div>
+                                        <span className="text-white/70 text-xs font-bold tracking-widest uppercase">
+                                            Passo {step.num}
+                                        </span>
+                                        <h3 className="text-white font-bold text-2xl md:text-3xl mt-1.5 mb-2 leading-snug">
+                                            {step.title}
+                                        </h3>
+                                        <p className="text-white/80 text-base leading-relaxed max-w-2xl">
+                                            {step.desc}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                <h3 className="font-bold text-lg mb-2 text-white">{step.title}</h3>
-                                <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
+                        )
+                    }
+
+                    return (
+                        <div
+                            key={i}
+                            className="relative bg-[#1a1a1a] border border-zinc-800 hover:border-[#FF6300]/50 transition-all duration-300 rounded-2xl p-7 overflow-hidden group hover:-translate-y-1"
+                        >
+                            {/* Watermark */}
+                            <span className="absolute top-3 right-5 text-7xl font-black text-zinc-800 leading-none select-none pointer-events-none group-hover:text-[#FF6300]/10 transition-colors duration-300">
+                                {step.num}
+                            </span>
+
+                            {/* Icon */}
+                            <div className="w-12 h-12 rounded-xl bg-[#FF6300]/10 flex items-center justify-center mb-5 relative z-10 group-hover:bg-[#FF6300]/20 transition-colors duration-300">
+                                <Icon size={22} className="text-[#FF6300]" />
+                            </div>
+
+                            {/* Content */}
+                            <div className="relative z-10">
+                                <span className="text-[#FF6300] text-xs font-bold tracking-widest uppercase">
+                                    Passo {step.num}
+                                </span>
+                                <h3 className="text-white font-bold text-lg mt-1.5 mb-2 leading-snug">
+                                    {step.title}
+                                </h3>
+                                <p className="text-zinc-400 text-sm leading-relaxed">
+                                    {step.desc}
+                                </p>
                             </div>
                         </div>
                     )

@@ -4,11 +4,123 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MercadimUai - Seu Mercado Inteligente</title>
+    <title>MercadimUai - Mercado Autônomo 24H</title>
+
+    <!-- SEO Essencial -->
+    <meta name="description" content="MercadimUai: franquia de mercado autônomo 24h. Invista no seu próprio mercado sem funcionários, com gestão digital e retorno garantido." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mercadimuai.com.br/" />
+    <meta name="theme-color" content="#FF6300" />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mercadimuai.com.br/" />
+    <meta property="og:title" content="MercadimUai - Mercado Autônomo 24H" />
+    <meta property="og:description" content="Franquia de mercado autônomo 24h com gestão digital. Instalação gratuita, cashback e operação sem funcionários." />
+    <meta property="og:image" content="https://mercadimuai.com.br/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="MercadimUai" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MercadimUai - Mercado Autônomo 24H" />
+    <meta name="twitter:description" content="Franquia de mercado autônomo 24h com gestão digital. Instalação gratuita, cashback e operação sem funcionários." />
+    <meta name="twitter:image" content="https://mercadimuai.com.br/images/og-image.jpg" />
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Analytics 4 — substitua G-XXXXXXXXXX pelo seu Measurement ID no Google Analytics -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MercadimUai",
+      "url": "https://mercadimuai.com.br",
+      "logo": "https://mercadimuai.com.br/favicon.svg",
+      "email": "contato@mercadimuai.com.br",
+      "telephone": "+55-31-97542-6698",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-31-97542-6698",
+        "contactType": "sales",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": [
+        "https://instagram.com/mercadimuai",
+        "https://wa.me/5531975426698"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como funciona o mercado autônomo MercadimUai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O MercadimUai é instalado gratuitamente no condomínio ou empresa. Nossa equipe visita o local, elabora o projeto personalizado, realiza a instalação completa e inaugura o mercado em operação 24h. O consumidor paga apenas pelo que consumir, sem filas e com autoatendimento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o custo para instalar o MercadimUai no meu condomínio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A instalação é gratuita para o condomínio ou empresa. Não há taxa de instalação nem mensalidades para o local. Todos os custos operacionais ficam por conta do licenciado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O MercadimUai funciona 24 horas por dia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim! O MercadimUai opera 24 horas por dia, 7 dias por semana, sem filas, com sistema de autoatendimento simples e seguro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O condomínio recebe algum benefício financeiro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim! Ao atingir um volume mínimo de vendas mensais, o condomínio ou empresa recebe cashback depositado diretamente na conta do local, sem nenhum esforço adicional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como me tornar um licenciado MercadimUai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preencha o formulário no site ou entre em contato pelo WhatsApp (31) 97542-6698. Nossa equipe apresentará a proposta comercial completa e o modelo de negócio de mercado autônomo."
+          }
+        }
+      ]
+    }
+    </script>
   </body>
 </html>

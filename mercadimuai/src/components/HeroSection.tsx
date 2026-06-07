@@ -1,69 +1,91 @@
-import { ShoppingCart, MapPin } from 'lucide-react'
+import type { ModalType } from './ContactModal'
 
-export const HeroSection = () => (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center bg-[#050505] text-white px-4 py-8 md:py-20">
+interface Props {
+    onOpenModal: (type: ModalType) => void
+}
+
+export const HeroSection = ({ onOpenModal }: Props) => (
+    <section
+        className="hero-section relative overflow-hidden md:min-h-screen"
+        role="img"
+        aria-label="MercadimUai — mercado autônomo 24h instalado em condomínios e empresas"
+        style={{
+            backgroundImage: "url('/images/hero-bg-1700.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+        }}
+    >
+        {/* Content — vertically centered, left half */}
         <div
-            className="absolute inset-0 z-0 pointer-events-none"
-            style={{
-                backgroundImage:
-                    "url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=1920&auto=format&fit=crop')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'right center',
-                filter: 'grayscale(100%) brightness(0.4) contrast(1.2)',
-                opacity: 0.15,
-            }}
-        />
+            className="relative w-full max-w-[1440px] mx-auto flex items-start md:items-center pl-0 pr-4 sm:pr-8 lg:pr-8 pt-10 pb-10 sm:pt-24 lg:pt-[60px] md:min-h-screen"
+        >
+            <div className="hero-content w-full md:w-[62%] flex flex-col items-center md:items-start pt-4 pb-8 md:py-12">
 
-        <div className="relative z-10 flex flex-col items-center text-center max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-                <div className="relative">
-                    <ShoppingCart className="w-12 h-12 text-[#FF6B00]" strokeWidth={2.5} />
-                    <MapPin className="w-6 h-6 text-[#FF6B00] absolute -top-3 -right-2" fill="currentColor" />
+                {/* Logo — mobile */}
+                <div className="md:hidden overflow-hidden mb-2" style={{ height: '100px', width: '248px' }}>
+                    <img
+                        src="/images/logo.png"
+                        alt="MercadimUai"
+                        loading="eager"
+                        style={{ width: '248px', marginTop: '-96px' }}
+                    />
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                    <span className="text-white">Mercadim</span>
-                    <span className="text-[#FF6B00]">Uai</span>
+
+                {/* Logo — desktop */}
+                <div className="hidden md:block w-full mb-4">
+                    <div className="overflow-hidden" style={{ height: '156px', width: '380px', marginLeft: '-20px' }}>
+                        <img
+                            src="/images/logo.png"
+                            alt="MercadimUai"
+                            loading="eager"
+                            style={{ width: '380px', marginTop: '-146px' }}
+                        />
+                    </div>
+                </div>
+
+                {/* Badge */}
+                <div className="bg-[#FF6300] text-black font-black px-6 py-4 text-xs md:text-sm tracking-[0.24em] mb-8 uppercase">
+                    MERCADO AUTÔNOMO • 24H
+                </div>
+
+                {/* Headline */}
+                <h1 className="text-white text-3xl md:text-4xl xl:text-[46px] font-light leading-snug md:leading-[1.1] mb-8 text-center md:text-left" style={{ maxWidth: '560px' }}>
+                    Invista no seu futuro com um negócio
+                    autônomo, inteligente e que fatura
+                    <br />
+                    <strong className="font-black text-[#FF6300]">24 horas por dia</strong>
                 </h1>
-            </div>
 
-            <div className="bg-[#FF6B00] text-black font-bold px-4 py-1 text-sm tracking-widest rounded-sm mb-12 uppercase">
-                Mercado Autônomo • 24H
-            </div>
-
-            <h2 className="text-3xl md:text-5xl font-light leading-tight mb-8">
-                Invista no seu futuro com um negócio autônomo, inteligente e que fatura{' '}
-                <span className="font-bold text-[#FF6B00]">24 horas por dia.</span>
-            </h2>
-
-            <p className="text-xl md:text-2xl text-zinc-300 font-light mb-4 md:mb-12">
-                Seu mercadim, seu lucro, do seu jeito. <strong className="text-white font-bold">Uai!</strong>
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-                <a
-                    href="https://wa.me/5531975426698?text=Olá, gostaria de ser um licenciado MercadimUai"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-[#FF6B00] hover:bg-[#e56000] transition-colors text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg shadow-[#FF6B00]/20"
-                >
-                    Quero ser um licenciado
-                </a>
-                <a
-                    href="https://wa.me/5531975426698?text=Olá, gostaria de colocar o MercadimUai no meu condomínio"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="bg-[#1f2937] text-white hover:bg-[#374151] transition-colors px-8 py-3 rounded-full font-bold text-lg shadow-lg shadow-black/30"
-                >
-                    Quero no meu condomínio
-                </a>
+                {/* Sub + CTAs */}
+                <div className="bg-black/40 backdrop-blur-sm rounded-2xl px-4 py-3 md:py-5 w-full" style={{ maxWidth: '450px' }}>
+                    <p className="text-zinc-300 text-sm md:text-lg mb-3 md:mb-5 text-center md:text-left">
+                        Seu mercadim, seu lucro, do seu jeito.{' '}
+                        <strong className="text-white font-bold">Uai!</strong>
+                    </p>
+                    <div className="flex flex-row gap-2">
+                        <button
+                            onClick={() => onOpenModal('licenciado')}
+                            className="flex-1 bg-[#FF6300] hover:bg-[#e05800] text-white px-4 py-3 rounded font-bold text-xs uppercase tracking-wide shadow-md shadow-[#FF6300]/40 text-center transition-all"
+                        >
+                            Quero ser um licenciado
+                        </button>
+                        <button
+                            onClick={() => onOpenModal('condominio')}
+                            className="flex-1 border border-zinc-500 hover:border-zinc-300 hover:bg-white/5 text-white px-4 py-3 rounded font-bold text-xs uppercase tracking-wide text-center transition-all"
+                        >
+                            Quero no meu condomínio
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
+        {/* WhatsApp fixed button */}
         <a
             href="https://wa.me/5531975426698"
-            target="_blank"
-            rel="noreferrer"
-            className="fixed bottom-6 right-6 z-50 bg-[#25D366] shadow-lg shadow-[#25D366]/40 hover:bg-[#1ebe5a] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center"
+            target="_blank" rel="noreferrer"
+            className="fixed bottom-6 right-6 z-50 bg-[#25D366] shadow-lg hover:bg-[#1ebe5a] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-transform hover:scale-110"
+            style={{ boxShadow: '0 8px 24px rgba(37,211,102,0.4)' }}
             aria-label="WhatsApp"
         >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-7 h-7 md:w-8 md:h-8">
