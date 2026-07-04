@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 const estados = [
-    'AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG',
-    'PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'
+    'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG',
+    'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'
 ]
 
 export const LeadFormSection = () => {
@@ -29,7 +29,7 @@ export const LeadFormSection = () => {
                 </div>
 
                 <h2 className="text-3xl md:text-5xl font-bold text-zinc-900 text-center mb-6 leading-tight">
-                    Saiba tudo sobre o modelo de negócio mais promissor do Mercado e{' '}
+                    Saiba tudo sobre o modelo de negócio mais promissor do mercado e{' '}
                     <span className="relative inline-block">
                         <span className="relative z-10 text-[#FF6300]">seja um franqueado!</span>
                         <span className="absolute bottom-1 left-0 right-0 h-2 bg-[#FF6300]/10 rounded -z-0" />
@@ -111,7 +111,6 @@ export const LeadFormSection = () => {
                         className="w-full bg-[#FF6300] hover:bg-[#e05800] transition-colors text-white font-bold text-lg py-4 rounded-lg flex items-center justify-center gap-3 shadow-lg shadow-[#FF6300]/20"
                     >
                         Enviar
-                        <span className="text-white/70">✦</span>
                     </button>
                 </form>
             </div>

@@ -8,10 +8,10 @@ export const LicensingSection = ({ onOpenModal }: Props) => (
     <section id="investimento" className="bg-white py-20 md:py-28 px-4">
         <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-3">
-                Condições <span className="text-[#FF6300]">personalizadas</span> ao seu desejo empreendedor
+                Investimento <span className="text-[#FF6300]">acessível</span> para quem quer empreender
             </h2>
             <p className="text-zinc-500 text-lg mb-12">
-                Faça parte da empresa que <strong className="text-zinc-700">mais cresce no segmento</strong>
+                Faça parte de um modelo de negócio que <strong className="text-zinc-700">não para de crescer</strong>
             </p>
 
             {/* Boxes */}
@@ -24,8 +24,7 @@ export const LicensingSection = ({ onOpenModal }: Props) => (
                         <div>
                             <p className="font-bold text-zinc-800 text-sm leading-tight mb-1">Royalties</p>
                             <p className="text-[#FF6300] text-2xl font-black">4%</p>
-                            <p className="text-zinc-400 text-xs mt-1">+Taxas bancárias</p>
-                            <p className="text-zinc-400 text-xs">*Sobre o faturamento</p>
+                            <p className="text-zinc-400 text-xs mt-1">Sobre o faturamento</p>
                         </div>
                     </div>
                 </div>
@@ -35,9 +34,9 @@ export const LicensingSection = ({ onOpenModal }: Props) => (
                             <div className="w-2.5 h-2.5 rounded-full bg-[#FF6300]" />
                         </div>
                         <div>
-                            <p className="font-bold text-zinc-800 text-sm leading-tight mb-1">Investimento inicial</p>
-                            <p className="text-[#FF6300] text-2xl font-black">R$ 30k+</p>
-                            <p className="text-zinc-400 text-xs mt-1">*Valor aproximado</p>
+                            <p className="font-bold text-zinc-800 text-sm leading-tight mb-1">Taxa única de licenciamento</p>
+                            <p className="text-[#FF6300] text-2xl font-black">R$ 15 mil</p>
+                            <p className="text-zinc-400 text-xs mt-1">+R$ 5 mil por loja adicional</p>
                         </div>
                     </div>
                 </div>
